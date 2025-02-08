@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>Image Generator Gallery</title>
+  <style>
+    .input-container {
+      margin: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery-image {
+      width: 100%;
+      padding-bottom: 100%; /* 1:1 Aspect Ratio */
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .gallery-image:hover {
+      transform: scale(1.05);
+    }
+
+    #userInput {
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      flex-grow: 1;
+      max-width: 500px;
+    }
+
+    #submitBtn {
+      padding: 8px 16px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #submitBtn:hover {
+      background: #0056b3;
+    }
+
+    .loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="input-container">
+    <input type="text" id="userInput" placeholder="Enter image URL">
+    <button id="submitBtn">Generate</button>
+  </div>
+  <div id="gallery" class="gallery"></div>
+
+  <script src="app.js" type="module"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
